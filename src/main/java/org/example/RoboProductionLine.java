@@ -1,2 +1,5 @@
-package org.example;public interface RoboProductionLine {
+package org.example;
+
+public interface RoboProductionLine {
+    void work();
 }
