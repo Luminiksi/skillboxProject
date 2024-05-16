@@ -11,5 +11,9 @@ public class Main {
         if (weight <= maxWeight && cost >= minCost) {
             System.out.println("Доставка бесплатная");
         }
+
+        if (weight > maxWeight || cost < minCost) {
+            System.out.println("Доставка платная");
+        }
     }
 }
