@@ -16,27 +16,19 @@ public class Main {
                 milkAmount >= cappucinoMilkRequired;
 
         boolean coffeeIsEnough = coffeeAmount >=cappucinoCoffeeRequired;
-
-        if (!isBlocked && coffeeIsEnough && milkIsEnough) {
-            System.out.println("Готовим кофе");
+        if (isBlocked) {
+            System.out.println("Кофе-машина заблокирвоана");
         } else {
-            System.out.println("Что-то пошло не так :(");
+            if (coffeeIsEnough && milkIsEnough) {
+                System.out.println("Готовим кофе");
+            } else {
+                if (!coffeeIsEnough) {
+                    System.out.println("Кофе не достаточно");
+                }
+                if (!milkIsEnough) {
+                    System.out.println("Молока не достаточно");
+                }
+            }
         }
-
-       /* if (!isBlocked && coffeeAmount >=cappucinoCoffeeRequired &&
-                (skimmedMilkAmount >= cappucinoMilkRequired ||
-                        milkAmount >= cappucinoMilkRequired)) {
-            System.out.println("Готовим кофе");
-        } else {
-            System.out.println("Что-то пошло не так :(");
-        }*/
-
-        /*if (skimmedMilkAmount >= cappucinoMilkRequired ||
-            milkAmount >= cappucinoMilkRequired ||
-            lowLactoseMilkAmount >= cappucinoMilkRequired) {
-            System.out.println("Молока достаточно");
-        } else {
-            System.out.println("Молока не достаточно");
-        }*/
     }
 }
