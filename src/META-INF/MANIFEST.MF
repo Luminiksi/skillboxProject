@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Main-Class: part_1.lesson_10.dateTime.Main
+
