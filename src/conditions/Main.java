@@ -2,13 +2,14 @@ package conditions;
 
 public class Main {
     public static void main(String[] args) {
-        int count = 250;
-        if(count < 100) {
-            System.out.println("Мало");
-        } else if (count < 200) {
-            System.out.println("Средне");
-        } else {
-            System.out.println("Много");
+        int maxWeight = 5000;
+        int minCost = 1000;
+
+        int weight = 3200;
+        int cost = 1750;
+
+        if (weight <= maxWeight && cost >= minCost) {
+            System.out.println("Доставка бесплатная");
         }
     }
 }
