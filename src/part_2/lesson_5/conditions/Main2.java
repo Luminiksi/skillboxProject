@@ -1,6 +1,6 @@
 package part_2.lesson_5.conditions;
 
-public class Main {
+public class Main2 {
     public static void main(String[] args) {
 //        запас бумаги (количество листов)
         int paperReserve = 600000;
@@ -29,9 +29,13 @@ public class Main {
 //        печать одной обложки тратится столько же чернил, сколько на один лист бумаги
         int inkedPapersCount = papersCount + booksCount;
 
-        if (papersCount <= paperReserve && inkedPapersCount <= inkReserve &&
-                booksCount <= coverReserve &&
-                (coldPrintingMode || printRollerTemp > printRollerMinTemp && printRollerTemp < printRollerMaxTemp)) {
+        boolean paperIsEnough = papersCount <= paperReserve;
+        boolean inkIhsEnough = inkedPapersCount <= inkReserve;
+        boolean coversAreEnough = booksCount <= coverReserve;
+        boolean rollerTempIsNormal = printRollerTemp > printRollerMinTemp && printRollerTemp < printRollerMaxTemp;
+
+        if (paperIsEnough && inkIhsEnough && coversAreEnough &&
+                (coldPrintingMode || rollerTempIsNormal)) {
             System.out.println("Печать разрешена");
         } else {
             System.out.println("Печать запрещена");
