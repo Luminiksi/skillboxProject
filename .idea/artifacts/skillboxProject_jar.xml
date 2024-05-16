@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="skillboxProject:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/skillboxProject_jar</output-path>
+    <root id="archive" name="skillboxProject.jar">
+      <element id="module-output" name="skillboxProject" />
+    </root>
+  </artifact>
+</component>
