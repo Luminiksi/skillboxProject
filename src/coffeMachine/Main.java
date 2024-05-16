@@ -15,20 +15,15 @@ public class Main {
         boolean milkIsEnough = skimmedMilkAmount >= cappucinoMilkRequired ||
                 milkAmount >= cappucinoMilkRequired;
 
-        boolean coffeeIsEnough = coffeeAmount >=cappucinoCoffeeRequired;
+        boolean coffeeIsEnough = coffeeAmount >= cappucinoCoffeeRequired;
         if (isBlocked) {
             System.out.println("Кофе-машина заблокирвоана");
-        } else {
-            if (coffeeIsEnough && milkIsEnough) {
-                System.out.println("Готовим кофе");
-            } else {
-                if (!coffeeIsEnough) {
-                    System.out.println("Кофе не достаточно");
-                }
-                if (!milkIsEnough) {
-                    System.out.println("Молока не достаточно");
-                }
-            }
+        } else if (coffeeIsEnough && milkIsEnough) {
+            System.out.println("Готовим кофе");
+        } else if (!coffeeIsEnough) {
+            System.out.println("Кофе не достаточно");
+        } else if (!milkIsEnough) {
+            System.out.println("Молока не достаточно");
         }
     }
 }
