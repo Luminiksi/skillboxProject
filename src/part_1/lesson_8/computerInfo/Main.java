@@ -1,4 +1,4 @@
-package computerInfo;
+package part_1.lesson_8.computerInfo;
 
 public class Main {
     public static void main(String[] args) {
