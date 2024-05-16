@@ -1,4 +1,4 @@
-package part_1.practic.fillingStation;
+package part_1.practic;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

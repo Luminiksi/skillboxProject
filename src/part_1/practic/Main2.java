@@ -1,4 +1,4 @@
-package part_1.practic.fillingStation;
+package part_1.practic;
 
 public class Main2 {
     public static void main(String[] args) {
