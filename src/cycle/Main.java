@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        task8();
+        task10();
     }
 
     public static void task1() {
@@ -146,4 +146,69 @@ public class Main {
             }
         }
     }
+
+    public static void task9() {
+        System.out.println("Урок 3.6 - Оператор switch в Java 17");
+        System.out.println("Задание 1 - старый синтаксис(до 17 версии): только обрабатывал данные и не возвращал значение");
+        System.out.println();
+
+        System.out.println("Код с условиями:");
+        System.out.println(formatString(123124.324));
+        System.out.println("Код с switch:");
+        System.out.println(formatterPatternSwitch(123124.324));
+
+        System.out.println("В новом не нужно использовать break");
+    }
+
+    public static String formatString(Object obj) {
+        String result = "";
+        if (obj instanceof Integer) {
+            result = String.format("int %d", (Integer)obj);
+        } else if (obj instanceof Long) {
+            result = String.format("long %d", (Long)obj);
+        } else if (obj instanceof Double) {
+            result = String.format("double %f", (Double)obj);
+        } else if (obj instanceof String) {
+            result = String.format("string %s", obj);
+        }
+        return result;
+    }
+
+    public static String formatterPatternSwitch(Object o) {
+        return switch (o) {
+            case Integer i -> String.format("int %d", i);
+            case Long l -> String.format("long %d", l);
+            case Double d -> String.format("double %f", d);
+            case String s -> String.format("string %s", s);
+            default -> o.toString();
+        };
+    }
+
+    public static void task10() {
+        System.out.println("Урок 3.6 - Оператор switch в Java 17");
+        System.out.println("Задание 2 - Проверки");
+        System.out.println();
+
+        System.out.println("Можно задействовать проверку на null");
+
+        Object o = null;
+
+        switch (o) {
+            case null -> System.out.println("Is NULL");
+            case String s -> System.out.println("String");
+            default -> System.out.println("Something else");
+        }
+        System.out.println();
+
+//        TODO: проверить ка кэто должно работать и есть ли оно в других версиях(кроме как на 17ой)
+        /*дополнительное условие должно рабоатть на 17+, но у меня на 21ой почему-то не пашет, надо будет почитать*/
+        /*String value = "test string";
+        switch (value) {
+            case String s && (s.length() < 3) -> System.out.println("Строка слишком короткая");
+            case String s && (s.length() < 10) -> System.out.println("Нормальная строка");
+            default -> System.out.println("Слишком длинная строка");
+        }*/
+
+    }
 }
+
