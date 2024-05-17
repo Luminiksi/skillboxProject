@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        task5();
+        task8();
     }
 
     public static void task1() {
@@ -86,5 +86,64 @@ public class Main {
             }
         }
         System.out.println();
+    }
+
+    public static void task6() {
+        System.out.println("Урок 3.5 - Оператор “switch … case”");
+        System.out.println("Задание 1.1 - как бы выглядел код без “switch … case”");
+
+        while (true) {
+            System.out.println("Введите сообщение");
+            String input = new Scanner(System.in).nextLine();
+
+            if (input.equals("Привет!")) {
+                System.out.println("Привет!");
+            } else if (input.equals("как дела?")) {
+                System.out.println("Отлично! У тебя как?");
+            } else {
+                System.out.println("не понимаю сообщения :(");
+            }
+        }
+    }
+
+    public static void task7() {
+        System.out.println("Урок 3.5 - Оператор “switch … case”");
+        System.out.println("Задание 1.2 - а теперь с “switch … case”");
+
+        while (true) {
+            System.out.println("Введите сообщение");
+            String input = new Scanner(System.in).nextLine();
+
+
+            switch (input) {
+                case "Привет!":
+                    System.out.println("Привет!");
+                    break;
+                case "Как дела?" :
+                    System.out.println("Отлично! У тебя как?");
+                    break;
+                default:
+                    System.out.println("не понимаю сообщения :(");
+            }
+        }
+    }
+
+    public static void task8() {
+        System.out.println("Урок 3.5 - Оператор “switch … case”");
+        System.out.println("Задание 1.3 - сокращаем(данный синтаксиси пошел с 14 версии java)");
+
+        while (true) {
+            System.out.println("Введите сообщение");
+            String input = new Scanner(System.in).nextLine();
+
+            switch (input) {
+                case "Привет!" -> System.out.println("Привет!");
+                case "Как дела?" -> {
+                    System.out.println("Отлично!");
+                    System.out.println("У тебя как?");
+                }
+                default -> System.out.println("не понимаю сообщения :(");
+            }
+        }
     }
 }
