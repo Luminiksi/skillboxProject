@@ -5,7 +5,36 @@ public class Basket {
     private int totalPrice = 0;
     private int limit;
 
+    private static int count = 0;
+
+    private static int timeout;
+    private static PeriodType periodType = PeriodType.MONTH;
+
+//    Этот блок запускается при первом вызове данного класса
+    static {
+        int secondsInHour = 3600;
+        int hoursInDay = 24;
+        int daysInWeek = 7;
+        int daysInMonth = 30;
+        timeout = secondsInHour * hoursInDay * (periodType == PeriodType.WEEK ? daysInWeek : daysInMonth);
+    }
+
+    /*
+    Данный блок аналогичен верхнему static:
+    private static int timeout = getTimeout();
+    private static PeriodType periodType = PeriodType.MONTH;
+
+    private static int getTimeout() {
+        int secondsInHour = 3600;
+        int hoursInDay = 24;
+        int daysInWeek = 7;
+        int daysInMonth = 30;
+        timeout = secondsInHour * hoursInDay * (periodType == PeriodType.WEEK ? daysInWeek : daysInMonth);
+    }
+     */
+
     public Basket() {
+        increaseCount(1);
         items = "Список товаров: ";
         this.limit = 1000000;
     }
@@ -62,5 +91,13 @@ public class Basket {
             System.out.println(items);
         }
 
+    }
+
+    public static int getCount(){
+        return count;
+    }
+
+    public static void increaseCount(int count) {
+        Basket.count += count;
     }
 }

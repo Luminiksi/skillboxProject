@@ -3,9 +3,20 @@ package internetShop;
 public class Main {
 
     public static void main(String[] args) {
-        Product product = new Product("молоко", 56);
-        Order order = new Order();
-        order.addProduct(product);
-        System.out.println(product);
+        workWithDeliveryOrder();
+    }
+
+    public static void workWithDeliveryOrder() {
+        DelveryOrder order = new DelveryOrder(DeliveryType.PEDESTRIAN, Fragile.NO, Cold.YES);
+    }
+
+    public static void workWithBasket() {
+        createBasket();
+        Session session = new Session();
+        System.out.println(Basket.getCount());
+    }
+
+    public static void createBasket() {
+        Basket basket = new Basket("товары", 1231);
     }
 }
