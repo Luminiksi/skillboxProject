@@ -3,6 +3,8 @@ package practics.part_6;
 public class Basket {
 
     private static int count = 0;
+    private static int totalCost = 0;
+    private static int totalCount = 0;
     private String items = "";
     private int totalPrice = 0;
     private int limit;
@@ -62,8 +64,11 @@ public class Basket {
         }
 
         items = items + "\n" + name + " - " +
-            count + " шт. - " + price;
-        totalPrice = totalPrice + count * price;
+                count + " шт. - " + price;
+        int allPrice = count * price;
+        totalPrice = totalPrice + allPrice;
+        increaseTotalCost(allPrice);
+        increaseTotalCount(count);
     }
 
     public void clear() {
@@ -90,5 +95,21 @@ public class Basket {
 
     public double getTotalWeight(){
         return totalWeight;
+    }
+
+    private static void increaseTotalCost(int price) {
+        totalCost += price;
+    }
+
+    private static void increaseTotalCount(int count) {
+        totalCount += count;
+    }
+
+    public static double getAverageCost () {
+        return (double) totalCost / totalCount;
+    }
+
+    public static double getAverageBasketCost () {
+        return (double) totalCost / count;
     }
 }
