@@ -5,7 +5,10 @@ public class Basket {
     private int totalPrice = 0;
     private int limit;
 
+    public static int count = 0;
+
     public Basket() {
+        count++;
         items = "Список товаров: ";
         this.limit = 1000000;
     }
