@@ -11,6 +11,16 @@ public class GearBox {
 
     private int gear = 0;
 
+    public final GearBoxType type;
+
+    public GearBox(GearBoxType type) {
+        this.type = type;
+    }
+
+    public GearBoxType getType() {
+        return type;
+    }
+
     public void shiftUp() {
         gear = gear < MAX_GEAR ? gear + 1 : gear;
     }
