@@ -6,17 +6,17 @@ public class GearBox {
      *  -1 - rear
      *  1-6
      */
-    private int minGear = 1;
-    private int maxGear = 6;
+    public static final int MIN_GEAR = 1;
+    public static final int MAX_GEAR = 6;
 
     private int gear = 0;
 
     public void shiftUp() {
-        gear = gear < maxGear ? gear + 1 : gear;
+        gear = gear < MAX_GEAR ? gear + 1 : gear;
     }
 
     public void shiftDown() {
-        gear = gear > maxGear ? gear - 1 : gear;
+        gear = gear > MIN_GEAR ? gear - 1 : gear;
     }
 
     public void switchRear() {
