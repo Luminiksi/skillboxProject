@@ -3,6 +3,7 @@ package numbersAndDates;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 import java.time.temporal.IsoFields;
@@ -37,9 +38,51 @@ public class Main {
 
         practic6();
 
+        System.out.println();
+
+        practic7();
+
+        System.out.println();
+
+        practic8();
+
+        System.out.println();
+
+        practic9();
+
+    }
+    
+    public static void practic9(){
+        System.out.println("Из урока 9 часть");
+        //ZoneOffset.ofHours(3) - часовой пояс для Мссквы
+        LocalDateTime now = LocalDateTime.now();
+        System.out.println(now.toEpochSecond(ZoneOffset.ofHours(3)));
+        
+    }
+
+    public static void practic8(){
+        System.out.println("Из урока 8 часть");
+        //ZoneOffset.ofHours(3) - часовой пояс для Мссквы
+        LocalDateTime now = LocalDateTime.ofEpochSecond(System.currentTimeMillis() / 1000, 0 , ZoneOffset.ofHours(3));
+        System.out.println(now);
+
+    }
+
+    public static void practic7(){
+        System.out.println("Из урока 7 часть");
+        long start = System.currentTimeMillis();
+
+        String line = "";
+        for (int i = 0; i < 100000; i++) {
+            line += Math.random();
+        }
+
+        System.out.println(System.currentTimeMillis() - start);
+
     }
 
     public static void practic6() {
+        System.out.println("Из урока 6 часть");
         LocalDateTime time1 = LocalDateTime.now();
         LocalDateTime time2 = LocalDateTime.now().minusDays(2);
         if (time1.isBefore(time2)) {
