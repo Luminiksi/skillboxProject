@@ -18,7 +18,33 @@ public class Main {
     public static final String ANSI_WHITE = "\u001B[37m";
 
     public static void main(String[] args) {
-        lesson5();
+        lesson6();
+    }
+
+    public static void lesson6() {
+        System.out.println(ANSI_CYAN + "Lesson 5" + ANSI_RESET);
+        System.out.println(ANSI_GREEN + "String Pool" + ANSI_RESET);
+        System.out.println();
+
+        System.out.println("\t" + ANSI_YELLOW + "Task 1:" + ANSI_RESET);
+        String name1 = "Алексей";
+        String name2 = "Алексей";
+        System.out.println("#1");
+        System.out.println(name1 == name2);
+
+        String name3 = "Алексей";
+        String name4 = new String("Алексей");
+        System.out.println("#2");
+        System.out.println(name3 == name4);
+
+        String name5 = "Алексей";
+//        Если строка есть в пуле, тогда она будет хранить ту самую строку
+        String name6 = new String("Алексей").intern();
+        System.out.println("#3");
+        System.out.println(name5 == name6);
+        name5 += 1;
+        System.out.println(name5 == name6);
+
     }
 
     public static void lesson5() {
