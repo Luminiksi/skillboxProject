@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/08_NumbersStringAndDates/homework_8.2/GeometryCalculator/GeometryCalculator.iml" filepath="$PROJECT_DIR$/08_NumbersStringAndDates/homework_8.2/GeometryCalculator/GeometryCalculator.iml" />
       <module fileurl="file://$PROJECT_DIR$/08_NumbersStringAndDates/practic/java_NumbersAndDates/Module-NumbersAndDates.iml" filepath="$PROJECT_DIR$/08_NumbersStringAndDates/practic/java_NumbersAndDates/Module-NumbersAndDates.iml" />
+      <module fileurl="file://$PROJECT_DIR$/09_Strings/StringExperiments/StringExperiments.iml" filepath="$PROJECT_DIR$/09_Strings/StringExperiments/StringExperiments.iml" />
       <module fileurl="file://$PROJECT_DIR$/skillboxProject.iml" filepath="$PROJECT_DIR$/skillboxProject.iml" />
     </modules>
   </component>
