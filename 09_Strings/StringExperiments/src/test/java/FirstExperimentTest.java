@@ -5,7 +5,7 @@ import prictice.StringExperiments;
 
 
 @DisplayName("Эксперимент со строками")
-public class StringExperimentsTest {
+public class FirstExperimentTest {
     @Test
     @DisplayName("Test 1: Первая строка - картофель, вторая строка - кукуруза")
     void test1() {
@@ -62,7 +62,7 @@ public class StringExperimentsTest {
     }
 
     private void launch(String first, String second, String exp) {
-        String act = StringExperiments.theExperiment(first, second);
+        String act = StringExperiments.firstExperiment(first, second);
         Assertions.assertEquals(exp, act);
     }
 
