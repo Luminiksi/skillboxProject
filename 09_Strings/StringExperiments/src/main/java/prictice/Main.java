@@ -2,9 +2,35 @@ package prictice;
 
 import java.util.Scanner;
 
-public class StringExperiments {
+public class Main {
+    public static final String WRONG_STRING = "Была введенеа не корректная строка";
     public static void main(String[] args) {
-        secondExperiment();
+        thirdExperiment();
+    }
+
+    public static void thirdExperiment() {
+        String string = new Scanner(System.in).nextLine();
+        System.out.println(thirdExperiment(string));
+
+    }
+
+    public static String thirdExperiment(String string){
+        String result = "";
+        int firstIndex = string.indexOf(" ");
+        if (firstIndex < 0 || string.length() <= firstIndex + 2){
+            return WRONG_STRING;
+        }
+        int secondIndex = string.indexOf(" ", firstIndex + 1);
+        if (secondIndex < 0 || string.length() <= secondIndex + 1) {
+            return WRONG_STRING;
+        }
+        String lastName = string.substring(0, firstIndex);
+        result += "Фамилия: " + lastName + "\n";
+        String firstName = string.substring(firstIndex + 1, secondIndex);
+        result += "Имя: " + firstName + "\n";
+        String middleName = string.substring(secondIndex + 1);
+        result += "Отчество: " + middleName;
+        return result;
     }
 
     public static void secondExperiment() {

@@ -1,7 +1,7 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import prictice.StringExperiments;
+import prictice.Main;
 
 @DisplayName("Эксперимент со строками(мутим с преобразованиями)")
 public class SecondExperimentTest {
@@ -76,7 +76,7 @@ public class SecondExperimentTest {
     }
 
     private void launch(String first, String second, String operation, String exp) {
-        String act = StringExperiments.secondExperiment(first, operation, second);
+        String act = Main.secondExperiment(first, operation, second);
         Assertions.assertEquals(exp, act);
     }
 }
