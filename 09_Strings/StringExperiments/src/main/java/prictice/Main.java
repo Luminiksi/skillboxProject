@@ -5,7 +5,24 @@ import java.util.Scanner;
 public class Main {
     public static final String WRONG_STRING = "Была введенеа не корректная строка";
     public static void main(String[] args) {
-        thirdExperiment();
+        fourthExperiment();
+    }
+
+    public static void fourthExperiment() {
+        String text = "Вася заработал 5000 рублей, Петя - 7563 рубля, а Маша - 30000 рублей";
+        int startIndex = -1;
+        int sum = 0;
+        for (int i = 0; i < text.length(); i++) {
+            if (Character.isDigit(text.charAt(i)) && startIndex == -1) {
+                startIndex = i;
+            } else if (!Character.isDigit(text.charAt(i)) && startIndex != -1) {
+                String subString = text.substring(startIndex, i);
+                int num = Integer.parseInt(subString);
+                sum += num;
+                startIndex = -1;
+            }
+        }
+        System.out.println("Итоговая сумма = " + sum);
     }
 
     public static void thirdExperiment() {
