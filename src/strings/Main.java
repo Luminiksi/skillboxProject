@@ -4,6 +4,7 @@ import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDate;
+import java.util.StringJoiner;
 
 public class Main {
     public static final String ANSI_RESET = "\u001B[0m";
@@ -17,10 +18,95 @@ public class Main {
     public static final String ANSI_WHITE = "\u001B[37m";
 
     public static void main(String[] args) {
-        lesson4();
+        lesson5();
+    }
+
+    public static void lesson5() {
+        System.out.println(ANSI_CYAN + "Lesson 5" + ANSI_RESET);
+        System.out.println();
+
+        System.out.println("\t" + ANSI_YELLOW + "Task 1:" + ANSI_RESET);
+        System.out.println(ANSI_GREEN + "Работа с подстроками:" + ANSI_RESET);
+
+        String header1 = "Content-Type: text/html; charset=utf-8;";
+        String header2 = "Content-Type: text/html; charset=windows-1251;";
+        String header3 = "Content-Type: text/html; charset=ISO-8859-1;";
+
+        String header4 = "Content-Type: text/html;";
+        String header5 = "Content-Type: text/html; charset=";
+        String header6 = "Content-Type: text/html; charset=;";
+
+        System.out.println("header1 - " + getEncoding(header1));
+        System.out.println("header2 - " + getEncoding(header2));
+        System.out.println("header3 - " + getEncoding(header3));
+
+        System.out.println("header4 - " + getEncoding(header4));
+        System.out.println("header5 - " + getEncoding(header5));
+        System.out.println("header6 - " + getEncoding(header6));
+        System.out.println();
+
+
+        System.out.println("\t" + ANSI_YELLOW + "Task 2:" + ANSI_RESET);
+
+        System.out.println(ANSI_GREEN + "Работа с StringJoiner(\", \"):" + ANSI_RESET);
+        String name1 = "Василий";
+        String name2 = "Георгий";
+        String name3 = "Алексей";
+
+        StringJoiner joiner = new StringJoiner(", ");
+        joiner.add(name1);
+        joiner.add(name2);
+        joiner.add(name3);
+        System.out.println(joiner);
+
+        System.out.println(ANSI_GREEN + "Работа с String.join(\", \", ...):" + ANSI_RESET);
+        String list = String.join(", ", name1, name2, name3);
+        System.out.println(list);
+
+        System.out.println();
+
+
+        System.out.println("\t" + ANSI_YELLOW + "Task 3:" + ANSI_RESET);
+        System.out.println(ANSI_GREEN + "Форматирование строк:" + ANSI_RESET);
+        String name = "Максим";
+        int birthday = 1986;
+//        {"name": "Максим", "birthday": "1986"}
+//        String result = "{\"name\": \"" + name + "\", \"birthday\": \"" + birthday +"\"}";
+        String template = "{\"name\": \"%s\", \"birthday\": \"%d\"}"; // где %s - это строка, а %d - число
+        String result = String.format(template, name, birthday);
+        System.out.println(result);
+        System.out.printf(template, name, birthday);
+        System.out.println();
+
+        System.out.println();
+
+        System.out.println(ANSI_PURPLE + "Список обозначений для форматирования:");
+        System.out.println("\t%s - строка(String)");
+        System.out.println("\t%d - целое число");
+        System.out.println("\t%f - число double или float");
+        System.out.println("\t%b - boolean");
+        System.out.println("\t%n - перенос строки");
+        System.out.println("\t%t - дата (Date))");
+        System.out.println("\t%% - символ процента" + ANSI_RESET);
+
+    }
+
+    public static String getEncoding(String header) {
+        String charset = "charset=";
+        int start = header.indexOf(charset);
+        int end = header.indexOf(';', start);
+        if (start < 0 || end < 0) {
+            return "";
+        }
+//        Возвращает подстроку начиная от start(включительно) до end(не включительно)
+        String encoding = header.substring(start + charset.length(), end);
+        return encoding;
     }
 
     public static void lesson4() {
+        System.out.println(ANSI_CYAN + "Lesson 4" + ANSI_RESET);
+        System.out.println();
+
         System.out.println(ANSI_GREEN + "Перебор символов в строке:" + ANSI_RESET);
         System.out.println("\t" + ANSI_YELLOW + "Task 1:" + ANSI_RESET);
         String hello = "Hello";
@@ -131,6 +217,9 @@ public class Main {
     }
 
     public static void lesson3() {
+        System.out.println(ANSI_CYAN + "Lesson 3" + ANSI_RESET);
+        System.out.println();
+
         int age = 37;
         String name = "Анна";
         String personInfo = name + " - " + age + " лет";
@@ -157,6 +246,9 @@ public class Main {
     }
 
     public static void lesson2() {
+        System.out.println(ANSI_CYAN + "Lesson 2" + ANSI_RESET);
+        System.out.println();
+
         String name = "Анастасия";
         String surname = "Басова";
         LocalDate birthday = LocalDate.of(1994, 1, 31);
