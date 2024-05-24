@@ -1,0 +1,10 @@
+package ArraysAndList;
+
+public enum FigureType {
+    ROOK,
+    HORSE,
+    ELEPHANT,
+    KING,
+    QUEEN,
+    PAWN
+}
