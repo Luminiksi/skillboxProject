@@ -1,8 +1,60 @@
 package ArraysAndList;
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
-        lesson4();
+        lesson5();
+    }
+
+    public static void lesson5() {
+        System.out.println("Lesson 4");
+        lesson4Task1();
+        lesson4Task2();
+        lesson4Task3();
+        lesson4Task4();
+    }
+
+    public static void lesson4Task1() {
+        System.out.println("\tlesson 4 task 1");
+        int[] values = {234, 79, 4342, 789};
+        Arrays.sort(values);
+        System.out.println(Arrays.toString(values));
+        System.out.println();
+    }
+
+    public static void lesson4Task2() {
+        System.out.println("\tlesson 4 task 2");
+        int[] a = {5, 6, 7};
+        int[] b = {5, 6, 7};
+        System.out.println(Arrays.equals(a, b));
+        System.out.println(Arrays.compare(a, b));
+        System.out.println();
+        int[] c = {5, 6, 8};
+        System.out.println(Arrays.equals(a, c));
+        System.out.println(Arrays.compare(a, c));
+        System.out.println();
+        int[] j = {5, 6, 7, 8};
+        System.out.println(Arrays.compare(j, a));
+        System.out.println();
+    }
+
+    public static void lesson4Task3() {
+        System.out.println("\tlesson 4 task 3");
+        int[] values = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int[] firstElements = Arrays.copyOf(values, 5);
+        System.out.println(Arrays.toString(firstElements));
+        int[] fragment = Arrays.copyOfRange(values, 2, 4);
+        System.out.println(Arrays.toString(fragment));
+        System.out.println();
+    }
+
+    public static void lesson4Task4() {
+        System.out.println("\tlesson 4 task 3");
+        int[] values = new int[20];
+        Arrays.fill(values, -1);
+        System.out.println(Arrays.toString(values));
+        System.out.println();
     }
 
     public static void lesson4() {
