@@ -1,5 +1,7 @@
 package practice.hospital;
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -7,6 +9,7 @@ public class Main {
         // значений для проверки и отладки
 
         float[] temperatureData = Hospital.generatePatientsTemperatures(30);
+        System.out.println(Arrays.toString(temperatureData));
         System.out.println(Hospital.getReport(temperatureData));
 
         //Пример вывода в консоль:
