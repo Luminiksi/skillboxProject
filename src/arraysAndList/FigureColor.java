@@ -1,4 +1,4 @@
-package ArraysAndList;
+package arraysAndList;
 
 public enum FigureColor {
     WHITE,

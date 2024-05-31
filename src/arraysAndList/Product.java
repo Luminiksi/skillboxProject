@@ -1,10 +1,10 @@
-package ArraysAndList;
+package arraysAndList;
 
-public class ProductF {
-    private final String name;
-    private final int price;
+public class Product {
+    private String name;
+    private int price;
 
-    public ProductF(String name, int price) {
+    public Product(String name, int price) {
         this.name = name;
         this.price = price;
     }
@@ -13,16 +13,16 @@ public class ProductF {
         return name;
     }
 
-    public ProductF setName(String name) {
-        return new ProductF(name, price);
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getPrice() {
         return price;
     }
 
-    public ProductF setPrice(int price) {
-        return new ProductF(name, price);
+    public void setPrice(int price) {
+        this.price = price;
     }
 
     @Override

@@ -1,4 +1,4 @@
-package ArraysAndList;
+package arraysAndList;
 
 public class Figure {
     private final FigureColor color;
