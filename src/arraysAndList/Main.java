@@ -1,30 +1,100 @@
 package arraysAndList;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        lesson5();
+        lesson7();
+    }
+
+    public static void lesson7() {
+        System.out.println("Lesson 6");
+        lesson7Task1();
+        System.out.println();
+        lesson7Task2();
+        System.out.println();
+        lesson7Task3();
+    }
+
+    public static void lesson7Task3() {
+        Integer[] numbers = {10, 20, 30, 40};
+        ArrayList<Integer> values = new ArrayList<>();
+        values.addAll(Arrays.asList(numbers));
+
+        for (Integer value : values) {
+            System.out.println(value);
+        }
+        System.out.println();
+
+        Integer[] val = values.toArray(new Integer[0]);
+        System.out.println(Arrays.toString(val));
+
+        System.out.println();
+    }
+
+    public static void lesson7Task2() {
+        System.out.println("\tlesson 7 task 2");
+        ArrayList<Task> taskList = new ArrayList<>();
+        taskList.add(new Task("Купить молока", "5 пакетов"));
+        taskList.add(new Task("Покормить кота", "новым кормом!"));
+        taskList.add(new Task("Сжечь секрктное", "Особенно из синей сумки!"));
+
+        taskList.add(0, new Task("Очень срочная задача", ""));
+        taskList.remove(1);
+        taskList.set(1, new Task("Покормить лошадь", "Новым кормом"));
+
+        for (Task task : taskList) {
+            System.out.println(task);
+        }
+        System.out.println();
+    }
+
+    public static void lesson7Task1() {
+        System.out.println("\tlesson 7 task 1");
+        int certCount = 1000;
+        int winnersRate = 100;
+        int[] certNumbers = new int[certCount];
+        boolean[] certIsWin = new boolean[certCount];
+        ArrayList<Integer> winnerCerts = new ArrayList<>();
+        for (int i = 0; i < certNumbers.length; i++) {
+            certNumbers[i] = 1_000_000 + (int) Math.round(8_999_999 * Math.random());
+            if (i % winnersRate == 0) {
+                winnerCerts.add(certNumbers[i]);
+            }
+        }
+
+        for (int i = 0; i < winnerCerts.size(); i++) {
+            System.out.println(winnerCerts.get(i));
+        }
+        System.out.println();
+        System.out.println("v2");
+        for (Integer winnerNumber : winnerCerts) {
+            System.out.println(winnerNumber);
+        }
+        System.out.println();
+        System.out.println(winnerCerts.get(5));
+        System.out.println();
     }
 
     public static void lesson5() {
-        System.out.println("Lesson 4");
-        lesson4Task1();
-        lesson4Task2();
-        lesson4Task3();
-        lesson4Task4();
+        System.out.println("Lesson 5");
+        lesson5Task1();
+        lesson5Task2();
+        lesson5Task3();
+        lesson5Task4();
     }
 
-    public static void lesson4Task1() {
-        System.out.println("\tlesson 4 task 1");
+    public static void lesson5Task1() {
+        System.out.println("\tlesson 5 task 1");
         int[] values = {234, 79, 4342, 789};
         Arrays.sort(values);
         System.out.println(Arrays.toString(values));
         System.out.println();
     }
 
-    public static void lesson4Task2() {
-        System.out.println("\tlesson 4 task 2");
+    public static void lesson5Task2() {
+        System.out.println("\tlesson 5 task 2");
         int[] a = {5, 6, 7};
         int[] b = {5, 6, 7};
         System.out.println(Arrays.equals(a, b));
@@ -39,8 +109,8 @@ public class Main {
         System.out.println();
     }
 
-    public static void lesson4Task3() {
-        System.out.println("\tlesson 4 task 3");
+    public static void lesson5Task3() {
+        System.out.println("\tlesson 5 task 3");
         int[] values = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         int[] firstElements = Arrays.copyOf(values, 5);
         System.out.println(Arrays.toString(firstElements));
@@ -49,8 +119,8 @@ public class Main {
         System.out.println();
     }
 
-    public static void lesson4Task4() {
-        System.out.println("\tlesson 4 task 3");
+    public static void lesson5Task4() {
+        System.out.println("\tlesson 5 task 3");
         int[] values = new int[20];
         Arrays.fill(values, -1);
         System.out.println(Arrays.toString(values));
