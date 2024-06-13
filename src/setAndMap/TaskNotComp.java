@@ -3,14 +3,14 @@ package setAndMap;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-public class Task implements Comparable<Task> {
+public class TaskNotComp {
     private String name;
     private final LocalDateTime time;
     private boolean isDone;
 
     private static  int equalsCount = 0;
 
-    public Task(String name) {
+    public TaskNotComp(String name) {
         this.name = name;
         time = LocalDateTime.now();
     }
@@ -37,7 +37,7 @@ public class Task implements Comparable<Task> {
 
     @Override
     public String toString() {
-        return "Task{" +
+        return "TaskNotComp{" +
                 "name='" + name + '\'' +
                 ", time=" + time +
                 ", isDone=" + isDone +
@@ -53,18 +53,12 @@ public class Task implements Comparable<Task> {
         equalsCount++;
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Task task = (Task) o;
+        TaskNotComp task = (TaskNotComp) o;
         return isDone == task.isDone && Objects.equals(name.toLowerCase(), task.name.toLowerCase());
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(name.toLowerCase(), isDone);
-    }
-
-
-    @Override
-    public int compareTo(Task task) {
-        return this.getTime().compareTo(task.getTime());
     }
 }

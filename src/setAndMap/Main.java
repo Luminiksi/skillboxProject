@@ -2,10 +2,162 @@ package setAndMap;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.TreeSet;
 
 public class Main {
     public static void main(String[] args) {
-        lesson3();
+        lesson4();
+    }
+
+    public static void lesson4() {
+        System.out.println("Lesson 4");
+        lesson4Task1();
+        System.out.println();
+        lesson4Task21();
+        System.out.println();
+        lesson4Task22();
+        System.out.println();
+        lesson4Task3();
+        System.out.println();
+        lesson4Task4();
+        System.out.println();
+
+    }
+
+    public static void lesson4Task1() {
+        System.out.println("\tLesson 4 - Task 1");
+        TreeSet<String> taskList = new TreeSet<>();
+        taskList.add("Покормить лошадь");
+        taskList.add("Антону напомнить об отчете");
+        taskList.add("Купить молоко");
+        taskList.add("Выбросить мусор");
+
+        for (String task : taskList) {
+            System.out.println(task);
+        }
+
+    }
+
+    public static void lesson4Task21() {
+        System.out.println("\tLesson 4 - Task 2");
+        TreeSet<Task> taskList = new TreeSet<>();
+        taskList.add(new Task("Покормить лошадь"));
+        taskList.add(new Task("Антону напомнить об отчете"));
+        taskList.add(new Task("Купить молоко"));
+        taskList.add(new Task("Выбросить мусор"));
+
+        for (Task task : taskList) {
+            System.out.println(task);
+        }
+
+    }
+
+    public static void lesson4Task22() {
+        System.out.println("\tLesson 4 - Task 2");
+        TreeSet<Task> taskList = new TreeSet<>();
+//        пришлось стувить паузы, т.к. добавлялось слишком быстро и выводился один  элемент
+        try {
+            taskList.add(new Task("Покормить лошадь"));
+            Thread.sleep(100);
+            taskList.add(new Task("Антону напомнить об отчете"));
+            Thread.sleep(100);
+            taskList.add(new Task("Купить молоко"));
+            Thread.sleep(100);
+            taskList.add(new Task("Выбросить мусор"));
+        } catch (Exception e) {
+            System.out.println("ERROR" + e.getMessage());
+        }
+
+        for (Task task : taskList) {
+            System.out.println(task);
+        }
+    }
+
+    public static void lesson4Task3() {
+        System.out.println("\tLesson 4 - Task 3");
+        System.out.println("Если мы не хотим делать класс с implements Comparable");
+        TreeSet<TaskNotComp> taskList = new TreeSet<>(new TaskComparator());
+        try {
+            taskList.add(new TaskNotComp("Покормить лошадь"));
+            Thread.sleep(100);
+            taskList.add(new TaskNotComp("Антону напомнить об отчете"));
+            Thread.sleep(100);
+            taskList.add(new TaskNotComp("Купить молоко"));
+            Thread.sleep(100);
+            taskList.add(new TaskNotComp("Выбросить мусор"));
+        } catch (Exception e) {
+            System.out.println("ERROR" + e.getMessage());
+        }
+
+        for (TaskNotComp task : taskList) {
+            System.out.println(task);
+        }
+
+    }
+
+    public static void lesson4Task4() {
+        System.out.println("\tLesson 4 - Task 3");
+        System.out.println("Если мы не хотим делать класс с implements Comparable");
+        TreeSet<TaskNotComp> taskList = new TreeSet<>(new TaskComparator());
+        try {
+            taskList.add(new TaskNotComp("Покормить лошадь"));
+            Thread.sleep(100);
+            taskList.add(new TaskNotComp("Антону напомнить об отчете"));
+            Thread.sleep(100);
+            taskList.add(new TaskNotComp("Купить молоко"));
+            Thread.sleep(100);
+            taskList.add(new TaskNotComp("Выбросить мусор"));
+        } catch (Exception e) {
+            System.out.println("ERROR" + e.getMessage());
+        }
+
+        System.out.print("ceiling = " );
+        System.out.println(taskList.ceiling(new TaskNotComp("Купить молоко")));
+        System.out.print("ceiling (равный или ближайший больший объект или null если вообще нет похожих) = " );
+        System.out.println(taskList.ceiling(new TaskNotComp("Купить мол")));
+        System.out.println(taskList.ceiling(new TaskNotComp("мол")));
+        System.out.print("floor = " );
+        System.out.println(taskList.floor(new TaskNotComp("Купить молоко")));
+        System.out.print("floor (равный или ближайший меньший объект или null если вообще нет похожих) = " );
+        System.out.println(taskList.floor(new TaskNotComp("Купить мол")));
+        System.out.println(taskList.ceiling(new TaskNotComp("мол")));
+        System.out.println();
+        System.out.println(taskList.contains(new TaskNotComp("Купить молоко")));
+        System.out.println(taskList.contains(new TaskNotComp("Купить моло")));
+        System.out.println();
+        System.out.print("higher (ближайший больший объект или null если вообще нет похожих) = " );
+        System.out.println(taskList.higher(new TaskNotComp("Купить молоко")));
+        System.out.println();
+        System.out.print("lower (ближайший меньший объект или null если вообще нет похожих) = " );
+        System.out.println(taskList.lower(new TaskNotComp("Купить молоко")));
+        System.out.println();
+
+        for (TaskNotComp task : taskList) {
+            System.out.println(task);
+        }
+        System.out.println();
+
+        System.out.print("Самый первый элемент = ");
+        System.out.println(taskList.first());
+        System.out.print("Самый последний элемент = ");
+        System.out.println(taskList.last());
+        System.out.println();
+        System.out.print("Самый первый элемент + удаление его из списка = ");
+        System.out.println(taskList.pollFirst());
+        System.out.print("Самый последний элемент + удаление его из списка = ");
+        System.out.println(taskList.pollLast());
+        System.out.println();
+
+        for (TaskNotComp task : taskList) {
+            System.out.println(task);
+        }
+        System.out.println();
+
+        System.out.println("так же есть такие:");
+        System.out.println("subSet - возвращает подмножество с А элемента до Б элемента");
+        System.out.println("headSet - возвращает подмножество с начала до А элемента");
+        System.out.println("tailSet - возвращает подмножество в А до конца списка");
+
     }
 
     public static void lesson3() {
@@ -131,6 +283,7 @@ public class Main {
 
         System.out.println();
     }
+
     public static void lesson2Task3() {
         System.out.println("\tLesson 2 - Task 3");
 
