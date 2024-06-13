@@ -5,7 +5,62 @@ import java.util.HashSet;
 
 public class Main {
     public static void main(String[] args) {
-        lesson2();
+        lesson3();
+    }
+
+    public static void lesson3() {
+        System.out.println("Lesson 3");
+        lesson3Task1();
+        System.out.println();
+        lesson3Task2();
+        System.out.println();
+        lesson3Task3();
+        System.out.println();
+        lesson3Task4();
+        System.out.println();
+
+    }
+
+    public static void lesson3Task1() {
+        System.out.println("\tLesson 3 - Task 1");
+        Task task = new Task("Купить лошадь");
+        System.out.println(task.hashCode());
+
+    }
+
+    public static void lesson3Task2() {
+        System.out.println("\tLesson 3 - Task 2");
+        HashSet<Task> taskList = new HashSet<>();
+        taskList.add(new Task("Купить молоко"));
+        taskList.add(new Task("Купить лошадь"));
+        taskList.add(new Task("Покормить кота"));
+        taskList.add(new Task("Купить лошадь"));
+        taskList.add(new Task("Купить молоко"));
+
+        for (Task task : taskList) {
+            System.out.println(task);
+        }
+
+    }
+
+    public static void lesson3Task3() {
+        System.out.println("\tLesson 3 - Task 3");
+        HashSet<Task> taskList = new HashSet<>();
+        long start = System.currentTimeMillis();
+        for (int i = 0; i < 1_000_000; i++) {
+            Task task = new Task("Некая задача для нашего списка " + (int) (1000 * Math.random()));
+            taskList.add(task);
+        }
+        System.out.println(System.currentTimeMillis() - start);
+        System.out.println(taskList.size());
+        System.out.println(Task.getEqualsCount());
+    }
+
+    public static void lesson3Task4() {
+        System.out.println("\tLesson 3 - Task 4");
+        HashSet<Task> taskList = new HashSet<>();
+        taskList.add(new Task("покормить лошадь"));
+        System.out.println(taskList.contains(new Task("Покормить лошадь")));
     }
 
     public static void lesson2() {
