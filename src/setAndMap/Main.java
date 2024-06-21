@@ -1,12 +1,44 @@
 package setAndMap;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.TreeSet;
 
 public class Main {
     public static void main(String[] args) {
-        lesson4();
+        lesson7();
+    }
+
+    public static void lesson7() {
+        System.out.println("Lesson 4");
+        lesson7Task1();
+        System.out.println();
+        lesson7Task2();
+        System.out.println();
+
+    }
+
+    public static void lesson7Task2() {
+        Basket basket = new Basket();
+        basket.add(new Product("Хлеб", 50), 10);
+        basket.add(new Product("Молоко", 75), 20);
+        basket.add(new Product("Масло", 150), 10);
+        basket.add(new Product("Молоко", 75), 30);
+        System.out.println(basket);
+    }
+
+    public static void lesson7Task1() {
+        System.out.println("\tLesson 7 - Task 1");
+        HashMap<String, Car> cars = new HashMap<>();
+
+        cars.put("A765MT77", new Car("A765MT77"));
+        cars.put("E637OO97", new Car("E637OO97"));
+        cars.put("Y789KX77", new Car("Y789KX77"));
+        cars.put("T372MH199", new Car("T372MH199"));
+        cars.put("E637OO97", new Car("E63werwerwr7OO97"));
+
+        System.out.println(cars.get("E637OO97"));
     }
 
     public static void lesson4() {
@@ -23,6 +55,7 @@ public class Main {
         System.out.println();
 
     }
+
 
     public static void lesson4Task1() {
         System.out.println("\tLesson 4 - Task 1");
