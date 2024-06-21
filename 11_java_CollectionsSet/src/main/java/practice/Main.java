@@ -1,3 +1,6 @@
+package practice;
+
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -19,6 +22,7 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        EmailList emails = new EmailList();
         
         while (true) {
             String input = scanner.nextLine();
@@ -27,6 +31,20 @@ public class Main {
             }
             
             //TODO: write code here
+            if (input.equals("LIST")) {
+                List<String> list = emails.getSortedEmails();
+                for (String email : list) {
+                    System.out.println(email);
+                }
+                continue;
+            }
+
+            int index = input.indexOf(" ");
+            String command = input.substring(0, index + 1);
+            if (!command.isEmpty() && command.equals("ADD")) {
+                String email = input.substring(index);
+                emails.add(email);
+            }
             
         }
     }
