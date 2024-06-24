@@ -35,15 +35,15 @@ public class PhoneBook {
         // формат одного контакта "Имя - Телефон"
         // если контакт не найден - вернуть пустой TreeSet
         HashSet<String> phones = new HashSet<>();
-        if (isAlreadyCreateName(name)) {
-            for (Map.Entry entry : phonesBook.entrySet()) {
-                if (entry.getValue().equals(name)) {
-                    phones.add(entry.getValue() + " - " + entry.getKey());
-                }
-            }
-            return phones;
+        if (!isAlreadyCreateName(name)) {
+            return new TreeSet<>();
         }
-        return new TreeSet<>();
+        for (Map.Entry entry : phonesBook.entrySet()) {
+            if (entry.getValue().equals(name)) {
+                phones.add(entry.getValue() + " - " + entry.getKey());
+            }
+        }
+        return phones;
     }
 
     public Set<String> getAllContacts() {
@@ -74,8 +74,7 @@ public class PhoneBook {
     */
 
     private String getContactFromSet(Set<String> set, String name) {
-        for (String element :
-                set) {
+        for (String element : set) {
             if (element.startsWith(name)) {
                 return element;
             }
@@ -99,16 +98,16 @@ public class PhoneBook {
 
     public static String getValidNumber(String string) {
         String phone = string.replaceAll(NOT_REGEX, "");
-        if (phone.matches(REGEX_NUMBERS)) {
-            if (phone.length() == 10) {
-                phone = "7" + phone;
-            } else if (phone.startsWith("8")) {
-                phone = "7" + phone.substring(1);
-                System.out.println(phone);
-            }
-            return phone;
+        if (!phone.matches(REGEX_NUMBERS)) {
+            return null;
         }
-        return null;
+        if (phone.length() == 10) {
+            phone = "7" + phone;
+        } else if (phone.startsWith("8")) {
+            phone = "7" + phone.substring(1);
+            System.out.println(phone);
+        }
+        return phone;
     }
 
     public static boolean isValidName(String string) {
