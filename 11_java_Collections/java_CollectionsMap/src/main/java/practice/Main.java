@@ -4,14 +4,13 @@ import java.util.Scanner;
 import java.util.Set;
 
 public class Main {
-    public static final Scanner scanner = new Scanner(System.in);
+    public static final Scanner SCANNER = new Scanner(System.in);
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
         PhoneBook book = new PhoneBook();
         while (true) {
             System.out.println("Введите номер, имя или команду:");
-            String name = scanner.nextLine();
+            String name = SCANNER.nextLine();
 
             if (name.equals("LIST")) {
                 getList(book);
@@ -47,7 +46,7 @@ public class Main {
         }
         System.out.println("Такого номера нет в телефонной книге.");
         System.out.println("Введите имя абонента для номера “" + phone + "”:");
-        name = scanner.nextLine();
+        name = SCANNER.nextLine();
         book.addContact(phone, name);
     }
 
@@ -65,7 +64,7 @@ public class Main {
         }
         System.out.println("Такого имени в телефонной книге нет.");
         System.out.println("Введите номер телефона для абонента “" + name + "”:");
-        String phone = scanner.nextLine();
+        String phone = SCANNER.nextLine();
         book.addContact(phone, name);
     }
 }
