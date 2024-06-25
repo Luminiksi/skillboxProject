@@ -32,7 +32,7 @@
                 <configuration>
                     <!-- Use last available configuration -->
                     <configLocation>checkstyle.xml</configLocation>
-                    <configLocation>${checkstyle.config.location}</configLocation>
+                    <configLocation>checkstyle.xml</configLocation>
                     <encoding>UTF-8</encoding>
                     <consoleOutput>true</consoleOutput>
                     <violationSeverity>warning</violationSeverity>
@@ -95,7 +95,7 @@
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <version>${checkstyle-maven-plugin.version}</version>
                 <configuration>
-                    <configLocation>${checkstyle.config.location}</configLocation>
+                    <configLocation>checkstyle.xml</configLocation>
                     <encoding>UTF-8</encoding>
                 </configuration>
 
