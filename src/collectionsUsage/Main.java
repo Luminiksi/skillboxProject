@@ -4,7 +4,39 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        lesson4();
+        lesson5();
+    }
+
+    public static void lesson5() {
+        System.out.println("Lesson 4");
+        lesson5Task1();
+        System.out.println();
+        lesson5Task2();
+        System.out.println();
+    }
+
+    public static void lesson5Task1() {
+        System.out.println("Lesson 5 -> Task 1");
+
+        Game game = new Game();
+        game.initPlayers();
+        ArrayList<String> winners = game.getWinners();
+        printList(winners);
+        System.out.println();
+    }
+
+    public static void lesson5Task2() {
+        System.out.println("Lesson 5 -> Task 1");
+
+        Game game = new Game();
+        game.initPlayers();
+        game.printList();
+        System.out.println();
+        game.add("Андрей Дмитриев");
+        System.out.println("После добавления получаем:");
+        game.printList();
+
+        System.out.println();
     }
 
     public static void lesson4() {
