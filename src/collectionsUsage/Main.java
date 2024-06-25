@@ -4,7 +4,40 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        lesson3();
+        lesson4();
+    }
+
+    public static void lesson4() {
+        System.out.println("Lesson 4");
+        lesson4Task1();
+        System.out.println();
+
+    }
+
+    public static void lesson4Task1() {
+        System.out.println("Lesson 4 -> Task 1");
+
+        ArrayList<String> colors = new ArrayList<>();
+        colors.add("Красный");
+        colors.add("Зеленый");
+        colors.add("Синий");
+        colors.add("Желтый");
+
+        System.out.println("исходный  list:");
+        printList(colors);
+        System.out.println();
+
+        Iterator<String> iterator = colors.iterator();
+        while (iterator.hasNext()) {
+            String color = iterator.next();
+            System.out.println(color);
+            if(color.equals("Зеленый")) {
+                System.out.println("DELETE!");
+                iterator.remove();
+            }
+        }
+        System.out.println("Итого:");
+        printList(colors);
     }
 
     public static void lesson3() {
