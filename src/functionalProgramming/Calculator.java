@@ -1,5 +1,7 @@
 package functionalProgramming;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.function.BiFunction;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
@@ -7,6 +9,57 @@ import java.util.function.Supplier;
 
 public class Calculator {
     public static void main(String[] args) {
+        lesson3();
+        System.out.println();
+        System.out.println();
+        lesson4();
+    }
+
+    public static void lesson4() {
+        System.out.println("From lesson 4");
+
+        System.out.println("BiFunction with lambda");
+        int a= 5;
+        int b = 3;
+
+        int result2 = calculate(a, b, (BiFunction<Integer, Integer, Integer>) (a1, b1) -> a1 + b1);
+        System.out.println(result2);
+        System.out.println();
+
+        System.out.println("List with lambda");
+        List<Integer> integers = Arrays.asList(1, 2, 3, 4);
+        integers.forEach(item -> System.out.println(item));
+        System.out.println();
+
+        System.out.println("List with lambda 2");
+        integers.forEach(System.out::println);
+        System.out.println();
+
+        System.out.println("Consumer with lambda");
+        Consumer<String> consumer = str -> System.out.println(str);
+        consumer.accept("Hello");
+        System.out.println();
+
+        System.out.println("Consumer with  2");
+        Consumer<String> consumer2 = System.out::println;
+        consumer2.accept("Hello 2");
+        System.out.println();
+
+        System.out.println("Consumer with  3");
+        Consumer<String> consumer3 = Calculator::print;
+        consumer3.accept("Hello 3");
+        System.out.println();
+
+        System.out.println("Supplier with lambda");
+        Supplier<String> supplier = String::new;
+        System.out.println(supplier.get());
+        System.out.println();
+
+    }
+
+    public static void lesson3() {
+        System.out.println("From lesson 3");
+
         System.out.println("Test calculate:");
         int a= 5;
         int b = 3;
@@ -62,6 +115,10 @@ public class Calculator {
         });
         System.out.println(result2);
         System.out.println();
+    }
+
+    private static void print(String str) {
+        System.out.println(str);
     }
 
     private static int calculate(int a, int b, Action<Integer> action) {
