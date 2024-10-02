@@ -2,16 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/practics/11_java_CollectionsSet/CollectionSet.iml" filepath="$PROJECT_DIR$/practics/11_java_CollectionsSet/CollectionSet.iml" />
-      <module fileurl="file://$PROJECT_DIR$/practics/10_CollectionaArrays/java_collectionsarray/CollectionsArray.iml" filepath="$PROJECT_DIR$/practics/10_CollectionaArrays/java_collectionsarray/CollectionsArray.iml" />
-      <module fileurl="file://$PROJECT_DIR$/practics/10_CollectionaArrays/java_collectionslist/CollectionsList.iml" filepath="$PROJECT_DIR$/practics/10_CollectionaArrays/java_collectionslist/CollectionsList.iml" />
-      <module fileurl="file://$PROJECT_DIR$/practics/11_java_Collections/java_CollectionsMap/CollectionsMap.iml" filepath="$PROJECT_DIR$/practics/11_java_Collections/java_CollectionsMap/CollectionsMap.iml" />
-      <module fileurl="file://$PROJECT_DIR$/practics/java_CollectionsSearch/CollectionsSearch.iml" filepath="$PROJECT_DIR$/practics/java_CollectionsSearch/CollectionsSearch.iml" />
-      <module fileurl="file://$PROJECT_DIR$/practics/08_NumbersStringAndDates/homework_8.2/GeometryCalculator/GeometryCalculator.iml" filepath="$PROJECT_DIR$/practics/08_NumbersStringAndDates/homework_8.2/GeometryCalculator/GeometryCalculator.iml" />
-      <module fileurl="file://$PROJECT_DIR$/practics/java-inheritance-basics/InheritanceExtends.iml" filepath="$PROJECT_DIR$/practics/java-inheritance-basics/InheritanceExtends.iml" />
-      <module fileurl="file://$PROJECT_DIR$/practics/08_NumbersStringAndDates/practic/java_NumbersAndDates/Module-NumbersAndDates.iml" filepath="$PROJECT_DIR$/practics/08_NumbersStringAndDates/practic/java_NumbersAndDates/Module-NumbersAndDates.iml" />
-      <module fileurl="file://$PROJECT_DIR$/practics/09_Strings/StringExperiments/StringExperiments.iml" filepath="$PROJECT_DIR$/practics/09_Strings/StringExperiments/StringExperiments.iml" />
-      <module fileurl="file://$PROJECT_DIR$/practics/09_Strings/java_strings/StringsAndRegex.iml" filepath="$PROJECT_DIR$/practics/09_Strings/java_strings/StringsAndRegex.iml" />
       <module fileurl="file://$PROJECT_DIR$/skillboxProject.iml" filepath="$PROJECT_DIR$/skillboxProject.iml" />
     </modules>
   </component>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
@@ -12,16 +13,6 @@
         <option value="$PROJECT_DIR$/10_CollectionaArrays/java_collectionslist/pom.xml" />
         <option value="$PROJECT_DIR$/11_java_CollectionsSet/pom.xml" />
         <option value="$PROJECT_DIR$/11_java_Collections/java_CollectionsMap/pom.xml" />
-        <option value="$PROJECT_DIR$/practics/11_java_CollectionsSet/pom.xml" />
-        <option value="$PROJECT_DIR$/practics/11_java_Collections/java_CollectionsMap/pom.xml" />
-        <option value="$PROJECT_DIR$/practics/10_CollectionaArrays/java_collectionslist/pom.xml" />
-        <option value="$PROJECT_DIR$/practics/10_CollectionaArrays/java_collectionsarray/pom.xml" />
-        <option value="$PROJECT_DIR$/practics/09_Strings/StringExperiments/pom.xml" />
-        <option value="$PROJECT_DIR$/practics/09_Strings/java_strings/pom.xml" />
-        <option value="$PROJECT_DIR$/practics/08_NumbersStringAndDates/practic/java_NumbersAndDates/pom.xml" />
-        <option value="$PROJECT_DIR$/practics/08_NumbersStringAndDates/homework_8.2/GeometryCalculator/pom.xml" />
-        <option value="$PROJECT_DIR$/practics/java_CollectionsSearch/pom.xml" />
-        <option value="$PROJECT_DIR$/practics/java-inheritance-basics/pom.xml" />
       </list>
     </option>
   </component>
