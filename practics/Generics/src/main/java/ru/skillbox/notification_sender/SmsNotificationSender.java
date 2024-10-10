@@ -16,9 +16,9 @@ public class SmsNotificationSender implements NotificationSender<SmsNotification
     }
 
     @Override
-    public void send(List notifications) {
+    public void send(List<SmsNotification> notifications) {
         notifications.forEach(notification -> {
-            send((SmsNotification) notification);
+            send(notification);
             System.out.println();
         });
     }

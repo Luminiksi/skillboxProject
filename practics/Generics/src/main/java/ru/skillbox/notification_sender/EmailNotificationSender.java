@@ -17,9 +17,9 @@ public class EmailNotificationSender implements NotificationSender<EmailNotifica
     }
 
     @Override
-    public void send(List notifications) {
+    public void send(List<EmailNotification> notifications) {
         notifications.forEach(notification -> {
-            send((EmailNotification) notification);
+            send(notification);
             System.out.println();
         });
     }

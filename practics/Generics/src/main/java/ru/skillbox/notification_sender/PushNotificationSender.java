@@ -18,9 +18,9 @@ public class PushNotificationSender implements NotificationSender<PushNotificati
     }
 
     @Override
-    public void send(List notifications) {
+    public void send(List<PushNotification> notifications) {
         notifications.forEach(notification -> {
-            send((PushNotification) notification);
+            send(notification);
             System.out.println();
         });
     }
