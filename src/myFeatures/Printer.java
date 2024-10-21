@@ -30,4 +30,8 @@ public class Printer {
     public static void printTime(long time) {
         System.out.println(ANSI_BLUE + "Время выполнения: " + time + " нс (или в мс: " + time / 1000000 + ")" + ANSI_RESET);
     }
+
+    public static void printResult(String name, String result) {
+        System.out.println(ANSI_RED + "-> " + ANSI_RESET + name + ANSI_RED + " -----> " + ANSI_GREEN + result + ANSI_RESET);
+    }
 }
