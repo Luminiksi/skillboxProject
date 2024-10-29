@@ -1,4 +1,4 @@
-package exceptions;
+package exceptions.lessons;
 
 import myFeatures.Printer;
 
@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class Lesson4 {
     public static void run() {
-        Printer.printLessonNumber(1);
+        Printer.printLessonNumber(4);
         /*task1();
         System.out.println();
         task2();

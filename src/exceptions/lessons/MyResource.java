@@ -1,4 +1,4 @@
-package exceptions;
+package exceptions.lessons;
 
 public class MyResource implements AutoCloseable{
     @Override
