@@ -29,13 +29,11 @@ public class Main {
     public static List<Flight> findFlightsLeavingInTheNextHours(Airport airport, int hours) {
         //TODO Метод должен вернуть список отправляющихся рейсов в ближайшее количество часов.
         return airport.getTerminals().stream()
-                .flatMap(terminal -> terminal.getFlights().stream()
-                        .filter(flight -> flight.getType().equals(Flight.Type.DEPARTURE))
-                        .filter(flight -> flight.getDate()
-                                .isBefore(Instant.from(Instant.now().plusSeconds(hours * 3600))))
-                        .filter(flight -> flight.getDate().isAfter(Instant.now()))
-                )
-                .collect(Collectors.toList());
+                .flatMap(terminal -> terminal.getFlights().stream()) // Собираем все рейсы в один поток
+                .filter(flight -> flight.getType().equals(Flight.Type.DEPARTURE)) // Фильтруем вылетающие рейсы
+                .filter(flight -> flight.getDate().isBefore(Instant.now().plusSeconds(hours * 3600))) // Фильтруем по дате до N часов вперед
+                .filter(flight -> flight.getDate().isAfter(Instant.now())) // Фильтруем только предстоящие рейсы
+                .collect(Collectors.toList()); // Собираем в список
     }
 
     public static Optional<Flight> findFirstFlightArriveToTerminal(Airport airport, String terminalName) {
